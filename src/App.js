@@ -8,27 +8,29 @@ import './App.css'
 
 
 class App extends Component {
-    user = {
-        id: 1,
-        displayName: "Test Testesen"
-    }
-
-    comments = [
-        {
+    state = {
+        user: {
             id: 1,
-            author: "Test Testesen",
-            parentComment: null,
-            content: "La di da di da",
-            timestamp: "10:00:00"
+            displayName: "Test Testesen"
         },
-        {
-            id: 2,
-            author: "Test Testesen",
-            parentComment: 1,
-            content: "Næhæi!",
-            timestamp: "10:00:01"
-        }
-    ]
+
+        comments: [
+            {
+                id: 1,
+                author: "Test Testesen",
+                parentComment: null,
+                content: "La di da di da",
+                timestamp: "10:00:00"
+            },
+            {
+                id: 2,
+                author: "Test Testesen",
+                parentComment: 1,
+                content: "Næhæi!",
+                timestamp: "10:00:01"
+            }
+        ]
+    }
   render () {
     return (
       <div className='App'>
@@ -37,10 +39,17 @@ class App extends Component {
           <h2>Team T!</h2>
         </div>
         <div className='component-test'>
-          <FantasticComponent user={this.user} comments={this.comments}/>
+          <FantasticComponent user={this.state.user} comments={this.state.comments} addComment={this.addComment}/>
         </div>
       </div>
     )
+  }
+
+  addComment = (comment) => {
+        let comments = this.state.comments.concat([comment])
+        this.setState({
+            comments
+        })
   }
 }
 

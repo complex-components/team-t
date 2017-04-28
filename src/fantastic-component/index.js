@@ -18,7 +18,7 @@ class FantasticComponent extends Component {
               return <Comment key={comment.id} comment={comment} />
             })
           }
-          <AddComment />
+          <AddComment comments={this.props.comments} user={this.props.user} addComment={this.props.addComment} />
       </div>
     );
   }
