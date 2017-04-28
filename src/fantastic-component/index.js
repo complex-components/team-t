@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
+import AddComment from './AddComment';
 import './component.css';
 
 class FantasticComponent extends Component {
@@ -17,7 +18,7 @@ class FantasticComponent extends Component {
           {this.props.comments.map((comment) => {
           return <Comment key={comment.id} comment={comment} />
       })}
-          {/*<AddComment />/*/}
+      <AddComment />
       </div>
     );
   }
