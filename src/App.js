@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FantasticComponent from './fantastic-component'
+import PropTypes from 'prop-types'
 import logo from './logo.svg'
 import './App.css'
 
@@ -46,12 +47,21 @@ class App extends Component {
   }
 
   addComment = (comment) => {
-        let comments = this.state.comments.concat([comment])
+        let index = 0;
+        if(comment.parentComment != null) { index = comment.id + 2 }
+        else index = this.state.comments.length
+        let preSplice = this.state.comments
+        preSplice.splice(index, 0, comment)
+        console.log(preSplice)
         this.setState({
-            comments
+            preSplice
         })
-        comment = ''
   }
+}
+
+App.propTypes = {
+    user: PropTypes.object,
+    comments: PropTypes.array
 }
 
 export default App
