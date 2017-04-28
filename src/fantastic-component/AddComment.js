@@ -12,14 +12,15 @@ export default class AddComment extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: "Enter comment here"
+            value: ""
         }
 }
     render() {
         return(
            <form onSubmit={this.onSubmit}>
                <div style={{"flexDirection":"column"}}>
-                    <textarea rows="4" value={this.state.value} onChange={this.handleComment} style={{ "display":"block",
+                    <textarea rows="4" value={this.state.value} onChange={this.handleComment} style={{ 
+                        "display":"block",
                         "marginBottom":"0.5rem", 
                         "borderRadius":"12px", 
                         "fontSize": "1.4rem",
@@ -42,9 +43,12 @@ export default class AddComment extends Component {
             author: this.props.user.displayName,
             parentComment: null,
             content: this.state.value,
-            timestamp: ""
+            timestamp: Date.now()
         }
 
-        this.props.addComment(comment)
+        if (comment.content.length > 0) {
+            this.props.addComment(comment)
+            this.state.value = ''
+        }
     }
 }
