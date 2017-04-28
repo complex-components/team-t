@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import AddComment from './AddComment';
 
 export default class Comment extends Component {
+
+
     render(){
         return (
             <div style={{"marginBottom":"1rem", "flexDirection":"column"}}>
@@ -14,7 +16,7 @@ export default class Comment extends Component {
                     </span>
                 </div>
                 <div style={{"color":"#75787B", "fontSize":"1.4rem"}}>{this.props.comment.content}</div>
-                <button>Svar!</button>
+                <a href="#" style={{"fontSize":"0.75rem", "color":"#8E7FAE"}}>Svar</a>
                 <div style={{"display":"none"}}>
                     <AddComment />
                 </div>

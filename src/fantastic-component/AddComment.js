@@ -21,7 +21,7 @@ export default class AddComment extends Component {
                <div style={{"flexDirection":"column"}}>
                     <textarea rows="4" value={this.state.value} onChange={this.handleComment} style={{ 
                         "display":"block",
-                        "marginBottom":"0.5rem", 
+                        "margin":"0.5rem 0", 
                         "borderRadius":"12px", 
                         "fontSize": "1.4rem",
                         "padding": "0.7rem",
