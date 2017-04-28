@@ -3,7 +3,32 @@ import FantasticComponent from './fantastic-component'
 import logo from './logo.svg'
 import './App.css'
 
+
+
+
+
 class App extends Component {
+    user = {
+        id: 1,
+        displayName: "Test Testesen"
+    }
+
+    comments = [
+        {
+            id: 1,
+            authorId: 1,
+            parentComment: null,
+            content: "La di da di da",
+            timestamp: "10:00:00"
+        },
+        {
+            id: 2,
+            authorId: 1,
+            parentComment: 1,
+            content: "Næhæi!",
+            timestamp: "10:00:01"
+        }
+    ]
   render () {
     return (
       <div className='App'>
@@ -12,7 +37,7 @@ class App extends Component {
           <h2>Team T!</h2>
         </div>
         <div className='component-test'>
-          <FantasticComponent />
+          <FantasticComponent user={this.user} comments={this.comments}/>
         </div>
       </div>
     )
