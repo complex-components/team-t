@@ -48,7 +48,7 @@ export default class AddComment extends Component {
 
         if (comment.content.length > 0) {
             this.props.addComment(comment)
-            this.state.value = ''
+            this.setState({ value: '' })
         }
     }
 }
