@@ -6,19 +6,19 @@ import './component.css';
 class FantasticComponent extends Component {
     style = {
         "display": "flex",
-        "justifyContent": "center",
-        "backgroundColor": "red",
-        "width": "200px",
-        "border": "solid 1px black",
-        "borderRadius": "10px"
+        "flexDirection": "column",
+        "flexWrap": "nowrap",
+        "textAlign": "left"
     }
   render() {
     return (
       <div style={this.style}>
-          {this.props.comments.map((comment) => {
-          return <Comment key={comment.id} comment={comment} />
-      })}
-      <AddComment />
+          {
+            this.props.comments.map((comment) => {
+              return <Comment key={comment.id} comment={comment} />
+            })
+          }
+          <AddComment />
       </div>
     );
   }
