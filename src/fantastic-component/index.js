@@ -15,10 +15,13 @@ class FantasticComponent extends Component {
       <div style={this.style}>
           {
             this.props.comments.map((comment) => {
-              return <Comment key={comment.id} comment={comment} />
+              return <Comment key={comment.id} comment={comment} user={this.props.user} comments={this.props.comments} addComment={this.props.addComment} />
             })
           }
-          <AddComment comments={this.props.comments} user={this.props.user} addComment={this.props.addComment} />
+          <AddComment comments={this.props.comments}
+                      user={this.props.user}
+                      parentComment={null}
+                      addComment={this.props.addComment} />
       </div>
     );
   }

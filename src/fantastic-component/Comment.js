@@ -18,7 +18,10 @@ export default class Comment extends Component {
                 <div style={{"color":"#75787B", "fontSize":"1.4rem"}}>{this.props.comment.content}</div>
                 <a href="#" style={{"fontSize":"0.75rem", "color":"#8E7FAE"}}>Svar</a>
                 <div style={{"display":"none"}}>
-                    <AddComment />
+                    <AddComment user={this.props.user}
+                                comments={this.props.comments}
+                                parentComment={this.props.comment.id}
+                                addComment={this.props.addComment} />
                 </div>
             </div>
         )

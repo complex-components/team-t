@@ -41,7 +41,7 @@ export default class AddComment extends Component {
         let comment = {
             id: this.props.comments.length + 1,
             author: this.props.user.displayName,
-            parentComment: null,
+            parentComment: this.props.parentComment,
             content: this.state.value,
             timestamp: Date.now()
         }
