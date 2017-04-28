@@ -16,14 +16,14 @@ class App extends Component {
     comments = [
         {
             id: 1,
-            authorId: 1,
+            author: "Test Testesen",
             parentComment: null,
             content: "La di da di da",
             timestamp: "10:00:00"
         },
         {
             id: 2,
-            authorId: 1,
+            author: "Test Testesen",
             parentComment: 1,
             content: "Næhæi!",
             timestamp: "10:00:01"
