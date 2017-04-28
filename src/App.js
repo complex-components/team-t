@@ -25,9 +25,16 @@ class App extends Component {
             },
             {
                 id: 2,
-                author: "Test Testesen",
+                author: "Navn Navnesen",
                 parentComment: 1,
                 content: "Næhæi!",
+                timestamp: Date.now()
+            },
+            {
+                id: 3,
+                author: "Navn Navnesen",
+                parentComment: null,
+                content: "Trolololol"
                 timestamp: Date.now()
             }
         ]
@@ -48,7 +55,7 @@ class App extends Component {
 
   addComment = (comment) => {
         let index = 0;
-        if(comment.parentComment != null) { index = comment.id + 2 }
+        if(comment.parentComment != null) { index = comment.parentComment + 1 }
         else index = this.state.comments.length
         let preSplice = this.state.comments
         preSplice.splice(index, 0, comment)
