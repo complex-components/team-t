@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AddComment from './AddComment';
 
 export default class Comment extends Component {
     render(){
@@ -13,6 +14,10 @@ export default class Comment extends Component {
                     </span>
                 </div>
                 <div style={{"color":"#75787B", "fontSize":"1.4rem"}}>{this.props.comment.content}</div>
+                <button>Svar!</button>
+                <div style={{"display":"none"}}>
+                    <AddComment />
+                </div>
             </div>
         )
     }
