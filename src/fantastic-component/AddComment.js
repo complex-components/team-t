@@ -42,7 +42,7 @@ export default class AddComment extends Component {
             author: this.props.user.displayName,
             parentComment: null,
             content: this.state.value,
-            timestamp: ""
+            timestamp: Date.now()
         }
 
         this.props.addComment(comment)
