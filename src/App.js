@@ -20,14 +20,14 @@ class App extends Component {
                 author: "Test Testesen",
                 parentComment: null,
                 content: "La di da di da",
-                timestamp: "10:00:00"
+                timestamp: Date.now()
             },
             {
                 id: 2,
                 author: "Test Testesen",
                 parentComment: 1,
                 content: "Næhæi!",
-                timestamp: "10:00:01"
+                timestamp: Date.now()
             }
         ]
     }
